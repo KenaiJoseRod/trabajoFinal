@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    {% load static %}
+        
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imagenes/logo.png' %}" />
+    <link rel="stylesheet"  href="{% static './index.css' %}">
+</head>
+
+<body>
+    <div class="background">
+        <div class="overlay">
+            <nav class="menu">
+                <div class="brand">C o n s t r u R e d</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Proyectos   </a></li>
+                    <li><a href="{% url 'login' %}">Iniciar sesion</a></li>
+                </ul>
+            </nav>
+            <div class="centered-text">
+                <h1>Bienvenidos</h1>
+                <p>Construye tus sueños con nosotros</p>
+            </div>
+        </div>
+    </div>
+  
+</body>
+
+</html>

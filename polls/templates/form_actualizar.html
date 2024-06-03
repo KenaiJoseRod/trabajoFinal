@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Formulario actualizar</title>
+        {% load static %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imagenes/logo.png' %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    </head>
+    
+        <div class="button-bar">
+   
+            <a class="btn" href="/home">Volve a la lista</a>
+            </div>
+    <body>
+      <div class="container mt-5">
+          <h2>Actualizar Contrato</h2>
+          <form action="/actualizar/{{ pro.cnt_codigo }}" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="cnt_id">CODIGO del Contrato:</label>
+                <input type="text" id="cnt_codigo" name="cnt_codigo" class="form-control" value="{{ pro.cnt_codigo }}" readonly>
+            </div>
+              <div class="form-group">
+                  <label for="cnt_nombre">Nombre del Contrato:</label>
+                  <input type="text" id="cnt_nombre" name="cnt_nombre" class="form-control" value="{{ pro.cnt_nombre }}">
+              </div>
+
+    
+              <div class="form-group">
+                  <label for="cnt_formapago">Forma de Pago:</label>
+                  <select id="cnt_formapago" name="cnt_formapago" class="form-control">
+                      <option value="Efectivo" {% if pro.cnt_formapago == 'Efectivo' %} selected {% endif %}>Efectivo</option>
+                      <option value="Tarjeta de Crédito" {% if pro.cnt_formapago == 'Tarjeta de Crédito' %} selected {% endif %}>Tarjeta de Crédito</option>
+                      <!-- Agrega más opciones según sea necesario -->
+                  </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="cnt_fechafirma">Fecha de Firma:</label>
+                  <input type="date" id="cnt_fechafirma" name="cnt_fechafirma" class="form-control" value="{{ pro.cnt_fechafirma}}">
+            </div>
+            <div class="form-group">
+                <label for="cnt_estado">Estado:</label>
+                <select name="cnt_estado" id="cnt_estado" class="form-control">
+                  <option value="En curso"{% if pro.cnt_estado == 'En curso' %} selected {% endif %}>En curso</option>
+                  <option value="Terminado"{% if pro.cnt_estado == 'Terminado' %} selected {% endif %}>Terminado</option>
+                </select>
+            </div>
+
+                <div class="form-group">
+                    <label for="cnt_fechacontrato">Fecha de creacion de contrato:</label>
+                    <input type="date" id="cnt_fechacontrato" name="cnt_fechacontrato" class="form-control"value="{{ pro.cnt_fechacontrato}}">
+                </div>
+              <div class="form-group">
+                  <label for="cliente">Cliente:</label>
+                  <input type="text" id="cliente" name="cliente" class="form-control" value="{{ pro.cliente_id}}"readonly>
+              </div>
+
+              <div class="form-group">
+                  <label for="trabajador">Trabajador:</label>
+                  <input type="text" id="trabajador" name="trabajador" class="form-control" value="{{ pro.trabajador_id}}"readonly>
+              </div>
+              <div class="form-group">
+                <label for="inmueble">Inmueble:</label>
+                <input type="text" id="inmueble" name="inmueble" class="form-control" value="{{ pro.inmueble_id}}"readonly>
+                </div>
+              
+
+              <button type="submit" class="btn btn-primary">Actualizar Contrato</button>
+          </form>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
