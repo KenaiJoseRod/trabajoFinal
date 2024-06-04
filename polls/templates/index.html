@@ -1,33 +1,385 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
+    {% load static %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imagenes/logo.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Inicio</title>
-    {% load static %}
-        
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imagenes/logo.png' %}" />
-    <link rel="stylesheet"  href="{% static './index.css' %}">
-</head>
+    <link rel="stylesheet" href="CSS/index.css">
 
+    <title>Index</title>
+    
+</head>
 <body>
-    <div class="background">
-        <div class="overlay">
-            <nav class="menu">
-                <div class="brand">C o n s t r u R e d</div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Proyectos   </a></li>
-                    <li><a href="{% url 'login' %}">Iniciar sesion</a></li>
-                </ul>
-            </nav>
-            <div class="centered-text">
-                <h1>Bienvenidos</h1>
-                <p>Construye tus sueños con nosotros</p>
+<!--INICIO DEL MAIN-->
+<div class="nav-main">
+    <a href="#main"> HOME</a>
+    <a href="#lar-title"> INMUEBLES</a>
+    <a href="#pro-title"> PROYECTOS</a>
+    <a href="{% url 'login' %}">LOGIN</a>
+</div>
+    <main class="main" id="main">
+      
+        <div class="div-containermain">
+            
+    
+            <div class="main-title">
+                <h1 class="titlemain">C o n s t r u R e d</h1>
+            </div>
+    
+            <div class="main-subtitle">
+                <h2 class="h2-subtitle"> construye tus sueños con nosotros</h2>
+            </div>
+    
+    
+            <div class="main-footer">
+                <div class="main-footerizq">
+                    <h3 class="main-footerder">www.construred.com</h3>
+                </div>
+    
+                <div class="main-footerder">
+                    <h3>seguridad / Confianza / Experiencia</h3>
+                </div>
+            </div>
+        </div>
+       
+    </main>
+<!--FIN DEL MAIN-->
+<!--INICIO DE LA SECCIÓN LAR (VIVIENDAS)-->
+    <section class="lar" id="lar">
+        <div class="lar-title" id="lar-title">
+            <h2 class="titlelar"> ENCUENTRA TU HOGAR IDEAL AQUÍ</h2>
+        </div>
+
+        <div class="lar-cardcontainer"><!--CONTENEDOR DE CARTAS-->
+
+            <!--NUEVA CARTA-->
+            <div class="cardlar-container">
+                <div class="cardlar-img">
+                    <img  alt="" class="imgcardlar" src="static/IMAGENES-PRO//lar1.jpeg" >
+                </div>
+                <div class="cardlar-title">
+                    <h2 class="titlecard">Condominio de casas San Antonio</h2>
+                </div>
+                <div class="cardlar-subtitle">
+                    <h3 class="subtitlecard">KM 72 de la panamericana Sur, San Antonio, Cañete</h3>
+                </div>
+                <div class="cardlar-info">
+                    <div class="cardinfo-left">
+                        <h3 class="infocard-left">142 a 221 m² tot.</h3>
+                    </div>
+                    <div class="cardinfo-right">
+                        <h3 class="infocard-right">4 dorm-2 baños-52 unidades</h3>
+                    </div>
+                    
+                </div>
+                <div class="btncardlard">
+                    <button class="cardbtn">conoce más</button>
+                </div>
+            </div>
+        <!--FIN DE LA CARTA-->
+        <!--NUEVA CARTA-->
+        <div class="cardlar-container">
+            <div class="cardlar-img">
+                <img  alt="" class="imgcardlar" src="static/IMAGENES-PRO//lar2.jpeg" >
+            </div>
+            <div class="cardlar-title">
+                <h2 class="titlecard">Las Lagunas De La Molina</h2>
+            </div>
+            <div class="cardlar-subtitle">
+                <h3 class="subtitlecard">Exquisita casa con acceso exclusivo al Club de La Laguna de La Molina</h3>
+            </div>
+            <div class="cardlar-info">
+                <div class="cardinfo-left">
+                    <h3 class="infocard-left">436 m² tot.
+                        3 dorm</h3>
+                </div>
+                <div class="cardinfo-right">
+                    <h3 class="infocard-right">2 baños
+                        2 estac.</h3>
+                </div>
+                
+            </div>
+            <div class="btncardlard">
+                <button class="cardbtn">conoce más</button>
+            </div>
+        </div>
+    <!--FIN DE LA CARTA-->
+    <!--NUEVA CARTA-->
+    <div class="cardlar-container">
+        <div class="cardlar-img">
+            <img  alt="" class="imgcardlar" src="static/IMAGENES-PRO/lar3.jpeg" >
+        </div>
+        <div class="cardlar-title">
+            <h2 class="titlecard">Los Castaños Cdra 4</h2>
+        </div>
+        <div class="cardlar-subtitle">
+            <h3 class="subtitlecard">Ambientes amplios, techos altos, excelentes acabados y gran jardín.            </h3>
+        </div>
+        <div class="cardlar-info">
+            <div class="cardinfo-left">
+                <h3 class="infocard-left">Terreno: 925m2  / AC:765m2</h3>
+            </div>
+            <div class="cardinfo-right">
+                <h3 class="infocard-right">Garaje para 5 autos </h3>
+            </div>
+            
+        </div>
+        <div class="btncardlard">
+            <button class="cardbtn">conoce más</button>
+        </div>
+    </div>
+<!--FIN DE LA CARTA-->
+<!--NUEVA CARTA-->
+<div class="cardlar-container">
+    <div class="cardlar-img">
+        <img  alt="" class="imgcardlar" src="static/IMAGENES-PRO/lar6.jpeg" >
+    </div>
+    <div class="cardlar-title">
+        <h2 class="titlecard">El Refugio, La Molina</h2>
+    </div>
+    <div class="cardlar-subtitle">
+        <h3 class="subtitlecard">Hermosa casa en Urb. El Refugio. Calle 5, con vista espectacular. </h3>
+    </div>
+    <div class="cardlar-info">
+        <div class="cardinfo-left">
+            <h3 class="infocard-left">470 m² tot. - 4 dorm.</h3>
+        </div>
+        <div class="cardinfo-right">
+            <h3 class="infocard-right">6 baños-6 estac.</h3>
+        </div>
+        
+    </div>
+    <div class="btncardlard">
+        <button class="cardbtn">conoce más</button>
+    </div>
+</div>
+<!--FIN DE LA CARTA-->
+<!--NUEVA CARTA-->
+<div class="cardlar-container">
+    <div class="cardlar-img">
+        <img  alt="" class="imgcardlar" src="static/IMAGENES-PRO/lar4.jpeg" >
+    </div>
+    <div class="cardlar-title">
+        <h2 class="titlecard">BUCARE 497, Camacho</h2>
+    </div>
+    <div class="cardlar-subtitle">
+        <h3 class="subtitlecard">Esta hermosa y encantadora , que te inspira solo cosas positivas.</h3>
+    </div>
+    <div class="cardlar-info">
+        <div class="cardinfo-left">
+            <h3 class="infocard-left"> 6 dormitorios </h3>
+        </div>
+        <div class="cardinfo-right">
+            <h3 class="infocard-right">Casa · 866m²</h3>
+        </div>
+        
+    </div>
+    <div class="btncardlard">
+        <button class="cardbtn">conoce más</button>
+    </div>
+</div>
+<!--FIN DE LA CARTA-->
+<!--NUEVA CARTA-->
+<div class="cardlar-container">
+    <div class="cardlar-img">
+        <img  alt="" class="imgcardlar" src="static/IMAGENES-PRO/lar5.jpeg" >
+    </div>
+    <div class="cardlar-title">
+        <h2 class="titlecard">¢oritas, Punta Hermosa</h2>
+    </div>
+    <div class="cardlar-subtitle">
+        <h3 class="subtitlecard">Casa de Lujo en Playa Señoritas con Vista Al Mar</h3>
+    </div>
+    <div class="cardlar-info">
+        <div class="cardinfo-left">
+            <h3 class="infocard-left">229 m² tot.-673 m² cub.</h3>
+        </div>
+        <div class="cardinfo-right">
+            <h3 class="infocard-right">6 baños-13 años</h3>
+        </div>
+        
+    </div>
+    <div class="btncardlard">
+        <button class="cardbtn">conoce más</button>
+    </div>
+</div>
+<!--FIN DE LA CARTA-->
+
+
+
+        </div><!--FIN DEL CONTENEDOR DE CARTAS-->
+    </section>
+<!--FIN DE LA SECCIÓN LAR-->
+
+<!--INICIO DE LA SECCIÓN PROYECTOS-->
+
+    <section class="proy" id="proy">
+        <div class="pro-title" id="pro-title">
+            <h2 class="titleproy">PROYECTOS QUE TE PUEDEN INTERESAR</h2>
+        </div>
+
+        <div class="proy-container"><!--CONTENEDOR DE CARTAS-->
+            
+        <!--INICIO DE LA CARTA-->
+            <div class="cardproy-container">
+                <div class="cardproy-img">
+                    <img alt="" class="imgproy" src="static/IMAGENES-PRO/proy4.jpeg" >
+                </div>
+                <div class="cardproy-title">
+                    <div class="titleproyizq">
+                        <h2 class="titleizq">120 a 303 m² tot.
+                        </h2>
+                    </div>
+                    <div class="titleproyder">
+                        <h2 class="titleproyder">113 a 210 m² techada</h2>
+                    </div>
+                </div>
+
+                <div class="cardproy-subtitle">
+                    <h3 class="subtitleproy">Lima Polo 375 representa la primera colaboración entre Morada y uno de los arquitectos más emblemáticos e influyentes de la escena arquitectónica peruana, Guillermo Málaga.
+                        El proyecto cuenta solo con 16 departamentos, distribuidos en 5 pisos y rooftop. Cuenta con flats, dúplex</h3>
+                </div>
+
+                <div class="cardproy-info">
+                    <div class="infoizq">
+                        <button class="estadoproy">En construcción</button>
+                    </div>
+                    <div class="infoder">
+                        <h1 class="precioproy">DESDE USD 272,867</h1>
+                    </div>
+                </div>
+            </div>
+        <!--FIN DE LA CARTA-->
+        <!--INICIO DE LA CARTA-->
+        <div class="cardproy-container">
+            <div class="cardproy-img">
+                <img alt="" class="imgproy" src="static/IMAGENES-PRO/proy5.jpeg" >
+            </div>
+            <div class="cardproy-title">
+                <div class="titleproyizq">
+                    <h2 class="titleizq">24 a 83 m² tot.</h2>
+                </div>
+                <div class="titleproyder">
+                    <h2 class="titleproyder">24 a 83 m² techada
+                    </h2>
+                </div>
+            </div>
+
+            <div class="cardproy-subtitle">
+                <h3 class="subtitleproy"> Avenida El Sol Este 530, San Ignacio, Barranco.Aspiria ¡Lanzamiento!
+                    Áreas comunes con aire bohemio y 100% funcionales. Diseñamos ambientes inspirados y súper funcionales para que pases un rato diferente entre amigos</h2>
+            </div>
+
+            <div class="cardproy-info">
+                <div class="infoizq">
+                    <button class="estadoproy">En construcción</button>
+                </div>
+                <div class="infoder">
+                    <h1 class="precioproy">DESDE 1,239.00</h1>
+                </div>
+            </div>
+        </div>
+    <!--FIN DE LA CARTA-->
+
+        
+        <!--INICIO DE LA CARTA-->
+        <div class="cardproy-container">
+            <div class="cardproy-img">
+                <img src="static/IMAGENES-PRO/pro3.jpeg" alt="" class="imgproy">
+            </div>
+            <div class="cardproy-title">
+                <div class="titleproyizq">
+                    <h2 class="titleizq">29 a 74 m² tot.</h3>
+                </div>
+                <div class="titleproyder">
+                    <h2 class="titleproyder">29 a 74 m² techada
+                    </h3>
+                </div>
+            </div>
+
+            <div class="cardproy-subtitle">
+                <h3 class="subtitleproy">Albamar | Arenales está ubicado en esquina de Av. Arenales con Ca. Mariano Carranza en Santa Beatriz. Una ubicación para invertir y generar rentabilidad asegurada. Depas lindos de 1, 2 y 3 ambientes desde 30 m2. Albamar | Arenales es sin duda tu mejor alternativa en Santa Beatriz. Un edificio bien pensado y distribuido donde tendrás momentos inolvidables. </h3>
+            </div>
+
+            <div class="cardproy-info">
+                <div class="infoizq">
+                    <button class="estadoproy">En construcción</button>
+                </div>
+                <div class="infoder">
+                    <h1 class="precioproy">DESDE 1,238.10</h1>
+                </div>
+            </div>
+        </div>
+    <!--FIN DE LA CARTA-->
+    <!--INICIO DE LA CARTA-->
+    <div class="cardproy-container">
+        <div class="cardproy-img">
+            <img src="static/IMAGENES-PRO/proy2.jpeg" alt="" class="imgproy">
+        </div>
+        <div class="cardproy-title">
+            <div class="titleproyizq">
+                <h2 class="titleizq">39 a 75 m² techada</h2>
+            </div>
+            <div class="titleproyder">
+                <h2 class="titleproyder">39 a 75 m² tot</h2>
+            </div>
+        </div>
+
+        <div class="cardproy-subtitle">
+            <h3 class="subtitleproy">LSalaverry 571
+                ¡Vive frente al Campo de Marte en Jesús María! Presentamos "Salaverry 571", un proyecto de 192 unidades, compuesto por 22 pisos y 6 niveles de sótanos para estacionamientos. Cuenta con Bahía vehicular y más de 8 áreas comunes para la seguridad y tranquilidad que necesitas. Áreas: Desde 39 m2 hasta 75 m2, y mucho más.        </div>
+
+        <div class="cardproy-info">
+            <div class="infoizq">
+                <button class="estadoproy">En construcción</button>
+            </div>
+            <div class="infoder">
+                <h1 class="precioproy">DESDE 1,239.00</h1>
             </div>
         </div>
     </div>
-  
-</body>
+<!--FIN DE LA CARTA-->
+<!--INICIO DE LA CARTA-->
+<div class="cardproy-container">
+    <div class="cardproy-img">
+        <img src="static/IMAGENES-PRO/proy1.jpeg" alt="" class="imgproy">
+    </div>
+    <div class="cardproy-title">
+        <div class="titleproyizq">
+            <h2 class="titleizq">57 a 132 m² tot.</h2>
+        </div>
+        <div class="titleproyder">
+            <h2 class="titleproyder">53 a 99 m² </h2>
+        </div>
+    </div>
 
+    <div class="cardproy-subtitle">
+        <h3 class="subtitleproy">Vive en Lince con San Isidro a 2 cuadras del Parque Ramón Castilla.
+            La vida moderna es demasiado compleja como para no vivirla con simplicidad Es por eso que hemos diseñado un edificio donde lo práctico, funcional y la excelente ubicación están al servicio de tu día a día.</h3>
+    </div>
+
+    <div class="cardproy-info">
+        <div class="infoizq">
+            <button class="estadoproy">En construcción</button>
+        </div>
+        <div class="infoder">
+            <h1 class="precioproy">S/524,000</h1>
+        </div>
+    </div>
+</div>
+<!--FIN DE LA CARTA-->
+
+
+        </div><!--FIN DEL CONTENEDOR DE CARTAS-->
+
+    </section>
+<!--FIN DE LA SECCIÓN PROYECTOS-->
+
+
+
+    
+</body>
 </html>

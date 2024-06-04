@@ -6,12 +6,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
 }
 .login-container {
     display: flex;
     width: 100%;
-    max-width: auto; /* Limitamos el ancho máximo */
+    max-width: auto; 
+
+    /* Limitamos el ancho máximo */
 }
 .login-image {
     flex: 2;
@@ -26,6 +27,7 @@ body {
     padding: 100px;
     text-align: center;
     padding-top: 250px;
+
 
 }
 .login-form h2 {

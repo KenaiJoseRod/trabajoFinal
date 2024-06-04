@@ -12,14 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <div class="button-bar">
-        <h4 class="text-left">           
-            <a class="btn" href="{% url 'home' %}">Regresar</a>
-        </h4> 
-    </div>
+    {% include "navbar.html" %}
+    {% block content %}
+    {% endblock %}
 
     <div class="container text-center">
-        <h1 style="font-size: 40px; font-family: Arial, Helvetica, sans-serif">LISTA DE CONTRATOS EN CURSO</h1>    
+        <h1 style="font-size: 40px; font-family: Arial, Helvetica, sans-serif">LISTA DE CONTRATOS</h1>    
         
         {% if r %}
             <script>
@@ -39,50 +37,59 @@
         {% endif %}
 
         {% if pro %}
-        <p>Total de Contratos : {{ total_contratos }}</p>
-
-            <table border="3" class="table table-hover" >
-                <tr bgcolor="#00aae4">
-                  <th>NOMBRE CONTRATO</th>
-                  <th>CLIENTE</th>
-                  <th>TRABAJADOR</th>
-                  <th>ESTADO</th>
-                  <th>VALOR</th>
-                  <th>FECHA DE CREACION DEL CONTRATO</th>
-                  <th>TIPO DE INMUEBLE </th>
-                  <th>DESCRIPCION DEL INMUEBLE</th>
-                  <th>ACCIONES</th>
-                </tr>
-            
-            {% for x in pro %}
-
-                <tr class="align-middle">
-                  
-                  <td>{{ x.nombre_contrato }}</td>
-                  <td>{{ x.nombre_cliente }} {{ x.apellido_cliente }}</td>
-                  <td>{{ x.nombre_trabajador }} {{ x.apellido_trabajador }}</td>
-                  <td>{{ x.estado }} </td>
-                  <td>{{ x.valor_contrato }}</td>
-                  <td>{{ x.fecha_contrato }}</td>
-                  <td>{{ x.tipo_inmueble }}</td>
-                  <td>{{ x.descripcion_inmueble }}</td>
-
-
-                    <td>
-                         <a href="/form_actualizar/{{ x.cnt_codigo }}" class="btn btn-lg" style=" border: 3px solid rgb(252, 70, 100) ;">
-                            <i class="bi bi-pencil-fill" ></i>
-                        </a>
-                        
-                        <button type="button" onClick="botonEliminar('{{ x.cnt_codigo }}')" class="btn btn-lg" style="border: 3px solid rgb(252, 70, 100);">
-                            <i class="bi bi-trash-fill"></i>
-                        </button>  
-                    </td> 
-                </tr>
-
-            {% endfor %}
-
-            </table>
-        
+            <p  class="container text-center">Total de Contratos : {{ total_contratos }}</p>
+            <div class="container">
+                <div class="row">
+                    {% for x in pro %}
+                        <div class="col-md-6">
+                            <div class="card mb-5">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">NOMBRE</h5>
+                                        <p class="card-text">{{ x.nombre_contrato }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">NOMBRE CLIENTE</h5>
+                                        <p class="card-text">{{ x.nombre_cliente }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">NOMBRE TRABAJADOR</h5>
+                                        <p class="card-text">{{ x.nombre_trabajador }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">ESTADO</h5>
+                                        <p class="card-text">{{ x.estado }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">VALOR</h5>
+                                        <p class="card-text">{{ x.valor_contrato }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">FECHA DEL CONTRATO</h5>
+                                        <p class="card-text">{{ x.fecha_contrato }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-2 mb-2">
+                                        <h5 class="card-title">TIPO DE INMUEBLE</h5>
+                                        <p class="card-text">{{ x.tipo_inmueble }}</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between border-bottom pb-4 mb-4">
+                                        <h5 class="card-title">DESCRIPCION DEL INMUEBLE</h5>
+                                        <p class="card-text">{{ x.descripcion_inmueble }}</p>
+                                    </div>
+                                    <div class="cont-atributo d-flex justify-content-between">
+                                        <a href="/form_actualizar/{{ x.cnt_codigo }}" class="btn btn-primary">
+                                            <i class="bi bi-pencil-fill"></i> Editar
+                                        </a>
+                                        <button type="button" onClick="botonEliminar('{{ x.cnt_codigo }}')" class="btn btn-danger">
+                                            <i class="bi bi-trash"></i> Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         {% else %}
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <h5>No Hay Registros Para Mostrar!!</h5>
@@ -102,24 +109,6 @@
             </script>
         {% endfor %}
     {% endif %}
-
-    {% block js %}
-        <script>
-            function botonEliminar(id){
-                Swal.fire({
-                    "title": "¿Estas seguro?",
-                    "text": "Esta acción no se puede deshacer",
-                    "icon": "question",
-                    "showCancelButton": true
-                })
-                .then(function(result){
-                    if(result.isConfirmed){
-                        window.location.href = "/eliminar/" + id;
-                    }
-                })
-            }
-        </script>
-    {% endblock %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
