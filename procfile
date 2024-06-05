@@ -1,1 +1,1 @@
-web:ginicorn trabajoFinal.wsgi ---log-file -
+web: gunicorn trabajoFinal.wsgi ---log-file -
