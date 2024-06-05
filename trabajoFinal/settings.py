@@ -84,10 +84,10 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bd_tr2',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'brecxjllpsqno3f5pnxe',
+        'USER': 'uziajbijfepykm5b',
+        'PASSWORD': 'ebv2xfr2ILHVQcG7yaPy',
+        'HOST': 'brecxjllpsqno3f5pnxe-mysql.services.clever-cloud.com',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
